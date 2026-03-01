@@ -1,0 +1,7 @@
+newspaper4k
+lxml[html_clean]
+feedparser
+requests
+beautifulsoup4
+python-dotenv
+nltk

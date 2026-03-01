@@ -1,0 +1,31 @@
+Agência SP|https://www.agenciasp.sp.gov.br/noticias/ | HTML
+Gazeta do Povo|https://www.gazetadopovo.com.br/ | HTML
+Gazeta do Povo São Paulo|https://www.gazetadopovo.com.br/feed/rss/sao-paulo.xml
+Gazeta do Povo Últimas Notícias|https://www.gazetadopovo.com.br/feed/rss/ultimas-noticias.xml
+Gazeta do Povo Artigos | https://www.gazetadopovo.com.br/feed/rss/opiniao/artigos.xml
+Correio da Manhã|https://www.correiodamanha.com.br/nacional/sao-paulo/estado-de-sao-paulo | HTML
+Alesp|https://www.al.sp.gov.br/noticias/ | HTML
+Metrópoles - São Paulo | https://www.metropoles.com/sao-paulo | HTML
+Metrópoles - Tag ALESP | https://www.metropoles.com/tag/alesp | HTML
+G1 SP|https://g1.globo.com/dynamo/sp/sao-paulo/rss2.xml
+G1 Política|https://g1.globo.com/dynamo/politica/rss2.xml
+UOL|https://rss.uol.com.br/feed/noticias.xml
+CNN Brasil|https://admin.cnnbrasil.com.br/feed/
+Agência Brasil|https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml
+R7|https://portalnoticiasr7.webnode.page/rss/noticias.xml
+Jovem Pan|https://jovempan.com.br/feed
+BBC Brasil|https://feeds.bbci.co.uk/portuguese/rss.xml
+Veja|https://veja.abril.com.br/feed/
+Exame|https://exame.com/feed/
+InfoMoney|https://www.infomoney.com.br/feed/
+Money Times|https://www.moneytimes.com.br/feed/
+Revista Oeste|https://revistaoeste.com/feed/
+Congresso em Foco|https://congressoemfoco.uol.com.br/feed/
+Câmara dos Deputados|https://www.camara.leg.br/noticias/rss/ultimas-noticias
+El País Brasil|https://feeds.elpais.com/mrss-s/pages/ep/site/brasil.elpais.com/portada
+UOL Começar o dia | https://rss.uol.com.br/feed/comecar-o-dia.xml
+Poder360|https://www.poder360.com.br/feed/
+A Tribuna | https://www.atribuna.com.br/noticias/ultimas-noticias/ | HTML
+Diário do Grande ABC | https://www.dgabc.com.br/ | HTML
+Diário do Grande ABC - Sete Cidades | https://www.dgabc.com.br/Editoria/1/setecidades/ | HTML
+Diário de S.Paulo | https://spdiario.com.br/ | HTML

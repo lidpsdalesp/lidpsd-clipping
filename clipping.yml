@@ -1,0 +1,46 @@
+name: Clipping Diário
+
+on:
+  schedule:
+    - cron: '0 10 * * 1-5'   # 07h BRT (dias úteis). Ajuste: 0 13 = 10h BRT
+  workflow_dispatch:           # permite rodar manualmente pelo GitHub
+
+jobs:
+  clipping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 📥 Checkout repositório
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 💾 Cache NLTK
+        uses: actions/cache@v4
+        with:
+          path: ~/nltk_data
+          key: nltk-punkt-v1
+
+      - name: 📦 Instalar dependências
+        run: |
+          pip install --upgrade pip
+          pip install newspaper4k lxml[html_clean] feedparser requests beautifulsoup4 python-dotenv nltk
+
+      - name: 🗞️ Rodar motor de clipping
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python motor_clipping_v27_cloud.py
+
+      - name: 💾 Commit arquivos atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add fila_para_curadoria.json urls_processadas.txt urls_tentadas.txt
+          git diff --staged --quiet || git commit -m "🗞️ Clipping $(date +'%d/%m/%Y %H:%M BRT')"
+          git push
