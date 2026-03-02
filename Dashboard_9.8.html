@@ -11252,5 +11252,45 @@ function getNoticiasOrdenadasExport(noticias){
 
     </script>
 
+
+<script>
+// AUTO-LOAD: carrega fila_para_curadoria.json do GitHub Pages automaticamente
+async function autoLoadFromGitHub() {
+  try {
+    const resp = await fetch('./fila_para_curadoria.json?t=' + Date.now());
+    if (!resp.ok) return;
+    const data = await resp.json();
+
+    let loadedNews = [];
+    if (Array.isArray(data)) {
+      loadedNews = data;
+    } else if (data && Array.isArray(data.news)) {
+      loadedNews = data.news;
+      if (data.themes && data.themes.length > 0) availableThemes = data.themes;
+      if (data.sources && data.sources.length > 0) availableSources = data.sources;
+      if (data.columnists && data.columnists.length > 0) availableColumnists = data.columnists;
+      if (data.monitoredVehicles && data.monitoredVehicles.length > 0) availableMonitoredVehicles = data.monitoredVehicles;
+    }
+
+    if (loadedNews.length === 0) return;
+
+    newsData = loadedNews.map(n => (typeof normalizeNewsItem === 'function' ? normalizeNewsItem(n) : n));
+    activeNewsId = newsData[0]?.id || null;
+
+    if (typeof renderAllEditorArticles === 'function') renderAllEditorArticles();
+    if (typeof updatePreviewTab === 'function') updatePreviewTab();
+    if (typeof updateNewsCounter === 'function') updateNewsCounter();
+
+    console.log('✅ Auto-load: ' + newsData.length + ' notícias carregadas do GitHub Pages.');
+  } catch(e) {
+    console.log('ℹ️ Auto-load: fila_para_curadoria.json não encontrado ou erro.', e.message);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(autoLoadFromGitHub, 800);
+});
+</script>
+
 </body>
 </html>
